@@ -3,5 +3,5 @@
   import Input from 'Components/Input.svelte'
 </script>
 
-<Cell message="hello"/>
+<Cell message="hello" byMe/>
 <Input initialString="hi"/>

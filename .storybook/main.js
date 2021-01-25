@@ -1,3 +1,4 @@
+const sveltePreprocess = require('svelte-preprocess')
 const path = require('path')
 
 module.exports = {
@@ -10,6 +11,14 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   webpackFinal: async config => {
+    const svelteLoader = config.module.rules.find(
+      (r) => r.loader && r.loader.includes("svelte-loader")
+    );
+    svelteLoader.options = {
+      ...svelteLoader.options,
+      preprocess: sveltePreprocess({ scss: true }),
+    };
+    
     config.resolve.alias = {
       ...config.resolve.alias,
       "Components": path.resolve(__dirname, "../src/components"),

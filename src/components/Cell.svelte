@@ -1,8 +1,12 @@
 <script lang="ts">
   export let message = ''
+  export let byMe = false
 </script>
 
-<div class="cell">
+<div
+  class:cell={true}
+  class:byMe
+>
   <p>
     { message }
   </p>
@@ -17,5 +21,9 @@
     border-radius: 25px;
     padding: 10px;
     box-sizing: border-box;
+    
+    &.byMe {
+      background-color: green;
+    }
   }
 </style>
