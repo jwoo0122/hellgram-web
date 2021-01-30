@@ -6,8 +6,8 @@ export default {
   title: 'Cell',
   component: Cell,
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 }
 
 const Template = (props) => ({
