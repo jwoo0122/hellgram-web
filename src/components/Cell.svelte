@@ -1,94 +1,21 @@
 <script lang="ts">
-  import Message from 'Models/Message'
-  
-  export let message: Message = new Message()
-  export let prevMessage: Message = new Message()
-  export let nextMessage: Message = new Message()
-  
-  $: byMe = message.isMine()
-  $: isContinuous = prevMessage.author === message.author
-  $: willContinuous = nextMessage.author === message.author
-  $: paragraphs = message.content.split('\n')
+  export let message = ''
 </script>
 
-<div
-  class="wrapper"
-  class:byMe
->
-  <div
-    class="cell"
-    class:byMe
-    class:isContinuous
-    class:willContinuous
-  >
-    {#each paragraphs as paragraph}
-      <p>
-        {#if paragraph === ''}
-          <br />
-        {:else}
-          { paragraph }
-        {/if}
-      </p>
-    {/each}
-  </div>
+<div class="cell">
+  <p>
+    { message }
+  </p>
 </div>
 
 <style type="text/scss">
-  $small-radius: 6px;
-  
-  .wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    
-    &.byMe {
-      justify-content: flex-end;
-    }
-    
-    &:not(:last-child) {
-      margin-bottom: 3px;
-    }
-    
-    .cell {
-      width: fit-content;
-      max-width: 200px;
-      min-height: 25px;
-      font-size: 16px;
-      background-color: #f2f2f2; // TODO: Support Theming
-      color: black; // TODO: Support Theming
-      border-radius: 25px;
-      padding: 8px;
-      box-sizing: border-box;
-      word-wrap: break-word;
-      
-      &.byMe {
-        background-color: #3cba4f; // TODO: Support Theming
-        color: white; // TODO: Support Theming
-        
-        &.isContinuous {
-          border-top-right-radius: $small-radius;
-        }
-        
-        &.willContinuous,
-        &:not(.isContinuous):not(.willContinuous) {
-          border-bottom-right-radius: $small-radius;
-        }
-      }
-      
-      p {
-        margin: 0;
-      }
-      
-      &:not(.byMe) {
-        &.isContinuous {
-          border-top-left-radius: $small-radius;
-        }
-        
-        &.willContinuous,
-        &:not(.isContinuous):not(.willContinuous) {
-          border-bottom-left-radius: $small-radius;
-        }
-      }
-    }
+  .cell {
+    max-width: 100px;
+    min-height: 50px;
+    font-size: 16px;
+    background-color: grey;
+    border-radius: 25px;
+    padding: 10px;
+    box-sizing: border-box;
   }
 </style>
