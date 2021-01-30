@@ -13,9 +13,6 @@ const production = !process.env.ROLLUP_WATCH;
 const aliases = alias({
 	entries: [
 		{ find: 'Components', replacement: 'src/components' },
-		{ find: 'Constants', replacement: 'src/constants' },
-		{ find: 'Styles', replacement: 'src/styles' },
-		{ find: 'Models', replacement: 'src/models' },
 	]
 })
 

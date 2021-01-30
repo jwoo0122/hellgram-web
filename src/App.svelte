@@ -1,5 +1,7 @@
 <script lang='ts'>
-  import MessageField from 'Components/MessageField.svelte'
+  import Cell from 'Components/Cell.svelte'
+  import Input from 'Components/Input.svelte'
 </script>
 
-<MessageField />
+<Cell message="hello"/>
+<Input initialString="hi"/>
