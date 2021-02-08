@@ -25,6 +25,9 @@ module.exports = {
       "Constants": path.resolve(__dirname, "../src/constants"),
       "Models": path.resolve(__dirname, "../src/models"),
       "Styles": path.resolve(__dirname, "../src/models"),
+      "Api": path.resolve(__dirname, "../src/api"),
+      "Store": path.resolve(__dirname, "../src/store"),
+      "Derived": path.resolve(__dirname, "../src/derived"),
     }
 
     return config;

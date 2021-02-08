@@ -1,7 +1,16 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
   "compilerOptions": {
-    "importsNotUsedAsValues": "preserve"
+    "importsNotUsedAsValues": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "Constants/*": ["src/constants/*"],
+      "Models/*": ["src/models/*"],
+      "Api/*": ["src/api/*"],
+      "Store/*": ["src/store/*"],
+      "Derived/*": ["src/derived/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]

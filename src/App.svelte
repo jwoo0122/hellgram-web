@@ -1,5 +1,9 @@
 <script lang='ts'>
-  import MessageField from 'Components/MessageField.svelte'
+  import Stream from 'Components/Stream.svelte'
+  import { messageStore } from 'Store/MessageStore'
 </script>
 
-<MessageField />
+<button on:click={() => messageStore.getMessages()}>
+  Fetch
+</button>
+<Stream />
