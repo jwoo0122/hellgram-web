@@ -1,7 +1,5 @@
 <script lang="ts">
   import Cell from 'Components/Cell.svelte'
-  
-  import { messageStore } from 'Store/MessageStore'
   import { messageList } from 'Derived/MessageDerived'
 </script>
 

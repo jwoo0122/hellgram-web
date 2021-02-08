@@ -5,4 +5,6 @@ const Client = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/',
 })
 
+// TODO: Implement any decrypt, encrypt logic
+
 export default Client
