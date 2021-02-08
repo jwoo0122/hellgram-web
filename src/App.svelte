@@ -1,5 +1,5 @@
 <script lang='ts'>
-  import MessageField from 'Components/MessageField.svelte'
+  import Stream from 'Components/Stream.svelte'
 </script>
 
-<MessageField />
+<Stream />

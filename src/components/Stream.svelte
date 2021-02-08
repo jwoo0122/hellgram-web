@@ -1,16 +1,16 @@
 <script lang="ts">
-  import Cell from 'Components/Cell'
-  import Message from 'Models/Message'
+  import Cell from 'Components/Cell.svelte'
   
-  export let messages: Message[] = []
+  import { messageStore } from 'Store/MessageStore'
+  import { messageList } from 'Derived/MessageDerived'
 </script>
 
 <div class="wrapper">
-  {#each messages as message, index}
+  {#each $messageList as message, index}
     <Cell
       message={message}
-      prevMessage={messages[index-1]}
-      nextMessage={messages[index+1]}
+      prevMessage={$messageList[index-1]}
+      nextMessage={$messageList[index+1]}
     />
   {/each}
 </div>
