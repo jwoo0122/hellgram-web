@@ -34,7 +34,7 @@
 </div>
 
 <style type="text/scss">
-  $small-radius: 6px;
+  $small-radius: 5px;
   
   .wrapper {
     display: flex;
@@ -52,25 +52,26 @@
     .cell {
       width: fit-content;
       max-width: 200px;
+      min-width: 30px;
       min-height: 25px;
       font-size: 16px;
       background-color: #f2f2f2; // TODO: Support Theming
       color: black; // TODO: Support Theming
-      border-radius: 25px;
+      border-radius: 20px;
       padding: 8px;
       box-sizing: border-box;
       word-wrap: break-word;
+      cursor: pointer;
       
       &.byMe {
-        background-color: #3cba4f; // TODO: Support Theming
+        background-color: #BA2C2B; // TODO: Support Theming
         color: white; // TODO: Support Theming
         
         &.isContinuous {
           border-top-right-radius: $small-radius;
         }
         
-        &.willContinuous,
-        &:not(.isContinuous):not(.willContinuous) {
+        &.willContinuous {
           border-bottom-right-radius: $small-radius;
         }
       }
@@ -84,8 +85,7 @@
           border-top-left-radius: $small-radius;
         }
         
-        &.willContinuous,
-        &:not(.isContinuous):not(.willContinuous) {
+        &.willContinuous {
           border-bottom-left-radius: $small-radius;
         }
       }

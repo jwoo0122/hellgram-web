@@ -18,13 +18,13 @@ function createMessageStore() {
   
   return {
     subscribe,
-    async getMessages(postId: string) {
+    async getMessages(postId?: string) {
       try {
-        const messages = await MessageAPI.getMessages(postId)
-        const modeledResult = messages.map(message => (
+        const { data } = await MessageAPI.getMessages(postId)
+        const modeledResult = data.map(message => (
           new Message({
-            content: message.body,
-            author: message.email,
+            content: (message.body as string).slice(0, Math.random() * 30),
+            author: (Math.random() >= 0.5) ? 'me' : 'he',
           })
         ))
         
